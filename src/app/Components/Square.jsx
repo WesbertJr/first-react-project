@@ -10,9 +10,11 @@ export default function Square({index}) {
         
         setInput((prevInput) => {
           if (!prevInput.includes(index)) {
+            console.log("not taken");
             setPlayer(position);
             return [...prevInput, index];;
           } else {
+            console.log("already taken");
             return prevInput;
           }
         });
@@ -23,7 +25,6 @@ export default function Square({index}) {
             className="w-20 h-20 border-black border" 
              onClick={handleClick}>
             <p className="text-6xl text-center pt-3">{player}</p>
-            {/* <p className="text-6xl text-center pt-3">{input}</p> */}
         </div>
     );
 }
